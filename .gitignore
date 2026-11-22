@@ -1,0 +1,22 @@
+# Patient records, raw datasets, exports and private configuration must NEVER be committed
+*.sas7bdat
+*.xpt
+*.xlsx
+*.xls
+*.csv
+!decision_template.csv
+*.pdf
+*.zip
+*.sqlite
+*.db
+*.env
+.env.*
+!*.env.example
+patient_data/
+real_cases/
+private/
+local_export/
+__pycache__/
+.venv/
+node_modules/
+.DS_Store

@@ -1,0 +1,265 @@
+[
+  {
+    "schema": "plaquecheck-v1",
+    "name": "UCI basic clinical model",
+    "target": "obstructive_cad",
+    "source": "User-supplied UCI Heart Disease CSV; num > 0",
+    "features": [
+      "age",
+      "male",
+      "sbp",
+      "cp_typical",
+      "cp_atypical",
+      "cp_nonanginal"
+    ],
+    "median": [
+      53.40625,
+      0.765625,
+      131.55078125,
+      0.041015625,
+      0.197265625,
+      0.212890625
+    ],
+    "mean": [
+      53.40625,
+      0.765625,
+      131.55078125,
+      0.041015625,
+      0.197265625,
+      0.212890625
+    ],
+    "scale": [
+      9.19764533386127,
+      0.4236075534914362,
+      18.32596985877278,
+      0.19832635605450774,
+      0.39793454008587814,
+      0.4093509579653007
+    ],
+    "coef": [
+      0.5287789637732313,
+      0.6478217135850576,
+      0.07205411331130121,
+      -0.21922347449450005,
+      -1.0564516572813953,
+      -0.7983835877133865
+    ],
+    "intercept": 0.1955001890947775,
+    "calibration_coef": 1.078237222930857,
+    "calibration_intercept": -0.015179080314136019,
+    "metrics": {
+      "auc": 0.8289,
+      "brier": 0.1531,
+      "accuracy": 0.8012,
+      "sensitivity_at_0_5": 0.8617,
+      "specificity_at_0_5": 0.7273,
+      "prevalence": 0.5497,
+      "n_test": 171,
+      "tn": 56,
+      "fp": 21,
+      "fn": 13,
+      "tp": 81,
+      "n_train": 512,
+      "n_calibration": 171,
+      "n_eligible": 854
+    },
+    "site_holdout": {
+      "Cleveland": {
+        "auc": 0.811,
+        "brier": 0.1857,
+        "accuracy": 0.7483,
+        "sensitivity_at_0_5": 0.8849,
+        "specificity_at_0_5": 0.6319,
+        "prevalence": 0.4603,
+        "n_test": 302,
+        "tn": 103,
+        "fp": 60,
+        "fn": 16,
+        "tp": 123
+      },
+      "Hungary": {
+        "auc": 0.8374,
+        "brier": 0.1709,
+        "accuracy": 0.7855,
+        "sensitivity_at_0_5": 0.7925,
+        "specificity_at_0_5": 0.7814,
+        "prevalence": 0.3668,
+        "n_test": 289,
+        "tn": 143,
+        "fp": 40,
+        "fn": 22,
+        "tp": 84
+      },
+      "Switzerland": {
+        "auc": 0.7788,
+        "brier": 0.1423,
+        "accuracy": 0.8099,
+        "sensitivity_at_0_5": 0.823,
+        "specificity_at_0_5": 0.625,
+        "prevalence": 0.9339,
+        "n_test": 121,
+        "tn": 5,
+        "fp": 3,
+        "fn": 20,
+        "tp": 93
+      },
+      "VA Long Beach": {
+        "auc": 0.6918,
+        "brier": 0.1783,
+        "accuracy": 0.7535,
+        "sensitivity_at_0_5": 0.8545,
+        "specificity_at_0_5": 0.4062,
+        "prevalence": 0.7746,
+        "n_test": 142,
+        "tn": 13,
+        "fp": 19,
+        "fn": 16,
+        "tp": 94
+      }
+    },
+    "age_min": 30,
+    "age_max": 77,
+    "limitations": [
+      "Complete cases only; geographic and historical referral-cohort selection bias.",
+      "0 values for BP and cholesterol treated as missing.",
+      "No ca (fluoroscopy), thal, stress measures, site or ID in model.",
+      "Threshold 0.5 for evaluation only; not a care threshold.",
+      "No appropriateness labels; no clinical decision confidence."
+    ]
+  },
+  {
+    "schema": "plaquecheck-v1",
+    "name": "UCI expanded clinical model",
+    "target": "obstructive_cad",
+    "source": "User-supplied UCI Heart Disease CSV; num > 0",
+    "features": [
+      "age",
+      "male",
+      "sbp",
+      "cp_typical",
+      "cp_atypical",
+      "cp_nonanginal",
+      "chol",
+      "fbs",
+      "rest_st",
+      "rest_lvh"
+    ],
+    "median": [
+      53.45454545454545,
+      0.7424242424242424,
+      132.6010101010101,
+      0.050505050505050504,
+      0.2297979797979798,
+      0.19696969696969696,
+      243.3560606060606,
+      0.15656565656565657,
+      0.15404040404040403,
+      0.26262626262626265
+    ],
+    "mean": [
+      53.45454545454545,
+      0.7424242424242424,
+      132.6010101010101,
+      0.050505050505050504,
+      0.2297979797979798,
+      0.19696969696969696,
+      243.3560606060606,
+      0.15656565656565657,
+      0.15404040404040403,
+      0.26262626262626265
+    ],
+    "scale": [
+      9.5513209486487,
+      0.4372990815049034,
+      18.34510363182842,
+      0.21898468069372523,
+      0.4207028265637718,
+      0.3977092348002026,
+      57.10102679679983,
+      0.3633907700393909,
+      0.3609874761864643,
+      0.4400610285008478
+    ],
+    "coef": [
+      0.39928496275934844,
+      0.6583161393686074,
+      0.3459126072975921,
+      -0.5017340655984526,
+      -1.1065698328348879,
+      -0.8588189760335599,
+      0.24282956751002222,
+      0.11764770486625857,
+      0.19636385992176777,
+      0.29655747503262375
+    ],
+    "intercept": -0.22350576496768548,
+    "calibration_coef": 0.8049756308562915,
+    "calibration_intercept": 0.22191442459549282,
+    "metrics": {
+      "auc": 0.8337,
+      "brier": 0.164,
+      "accuracy": 0.7727,
+      "sensitivity_at_0_5": 0.8254,
+      "specificity_at_0_5": 0.7246,
+      "prevalence": 0.4773,
+      "n_test": 132,
+      "tn": 50,
+      "fp": 19,
+      "fn": 11,
+      "tp": 52,
+      "n_train": 396,
+      "n_calibration": 132,
+      "n_eligible": 660
+    },
+    "site_holdout": {
+      "Cleveland": {
+        "auc": 0.8049,
+        "brier": 0.1794,
+        "accuracy": 0.745,
+        "sensitivity_at_0_5": 0.7914,
+        "specificity_at_0_5": 0.7055,
+        "prevalence": 0.4603,
+        "n_test": 302,
+        "tn": 115,
+        "fp": 48,
+        "fn": 29,
+        "tp": 110
+      },
+      "Hungary": {
+        "auc": 0.8224,
+        "brier": 0.1644,
+        "accuracy": 0.7838,
+        "sensitivity_at_0_5": 0.7347,
+        "specificity_at_0_5": 0.8137,
+        "prevalence": 0.3784,
+        "n_test": 259,
+        "tn": 131,
+        "fp": 30,
+        "fn": 26,
+        "tp": 72
+      },
+      "VA Long Beach": {
+        "auc": 0.7586,
+        "brier": 0.1476,
+        "accuracy": 0.798,
+        "sensitivity_at_0_5": 0.8961,
+        "specificity_at_0_5": 0.4545,
+        "prevalence": 0.7778,
+        "n_test": 99,
+        "tn": 10,
+        "fp": 12,
+        "fn": 8,
+        "tp": 69
+      }
+    },
+    "age_min": 30,
+    "age_max": 77,
+    "limitations": [
+      "Complete cases only; geographic and historical referral-cohort selection bias.",
+      "0 values for BP and cholesterol treated as missing.",
+      "No ca (fluoroscopy), thal, stress measures, site or ID in model.",
+      "Threshold 0.5 for evaluation only; not a care threshold.",
+      "No appropriateness labels; no clinical decision confidence."
+    ]
+  }
+]

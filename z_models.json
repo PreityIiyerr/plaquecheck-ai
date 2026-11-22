@@ -1,0 +1,168 @@
+[
+  {
+    "schema": "plaquecheck-v1",
+    "name": "Z-Alizadeh clinical model",
+    "target": "obstructive_cad",
+    "source": "Z-Alizadeh Sani, UCI 412; Cath Cad vs Normal, angiography-selected cohort",
+    "features": [
+      "age",
+      "male",
+      "dm",
+      "htn",
+      "sbp",
+      "dyspnea"
+    ],
+    "median": [
+      58.751381215469614,
+      0.5580110497237569,
+      0.3314917127071823,
+      0.580110497237569,
+      129.11602209944752,
+      0.4198895027624309
+    ],
+    "mean": [
+      58.751381215469614,
+      0.5580110497237569,
+      0.3314917127071823,
+      0.580110497237569,
+      129.11602209944752,
+      0.4198895027624309
+    ],
+    "scale": [
+      10.385341389275649,
+      0.49662331611589455,
+      0.4707493569975865,
+      0.49354058417960867,
+      17.723874016229015,
+      0.49354058417960867
+    ],
+    "coef": [
+      1.1058757237696268,
+      0.2749137645785236,
+      0.898304352469101,
+      0.26516588772064564,
+      0.4276604476639369,
+      -0.3824212645800166
+    ],
+    "intercept": 1.4379202645719011,
+    "calibration_coef": 0.49486905842656426,
+    "calibration_intercept": 0.46793073403237834,
+    "metrics": {
+      "auc": 0.8314,
+      "brier": 0.1541,
+      "accuracy": 0.7869,
+      "sensitivity_at_0_5": 1.0,
+      "specificity_at_0_5": 0.2778,
+      "prevalence": 0.7049,
+      "n_test": 61,
+      "tn": 5,
+      "fp": 13,
+      "fn": 0,
+      "tp": 43,
+      "n_train": 181,
+      "n_calibration": 61,
+      "n_eligible": 303
+    },
+    "age_min": 30,
+    "age_max": 86,
+    "limitations": [
+      "Single-centre historical referral cohort; only 303 records.",
+      "No angiography decision labels, no deferred cohort, no clinical rule-out threshold.",
+      "Only confirmed inputs; no imputation; binary BBB and RWMA.",
+      "No external or prospective validation."
+    ]
+  },
+  {
+    "schema": "plaquecheck-v1",
+    "name": "Z-Alizadeh clinical + ECG/echo model",
+    "target": "obstructive_cad",
+    "source": "Z-Alizadeh Sani, UCI 412; Cath Cad vs Normal, angiography-selected cohort",
+    "features": [
+      "age",
+      "male",
+      "dm",
+      "htn",
+      "sbp",
+      "dyspnea",
+      "qwave",
+      "bbb",
+      "ef",
+      "rwma"
+    ],
+    "median": [
+      58.751381215469614,
+      0.5580110497237569,
+      0.3314917127071823,
+      0.580110497237569,
+      129.11602209944752,
+      0.4198895027624309,
+      0.03314917127071823,
+      0.0718232044198895,
+      47.07734806629834,
+      0.3314917127071823
+    ],
+    "mean": [
+      58.751381215469614,
+      0.5580110497237569,
+      0.3314917127071823,
+      0.580110497237569,
+      129.11602209944752,
+      0.4198895027624309,
+      0.03314917127071823,
+      0.0718232044198895,
+      47.07734806629834,
+      0.3314917127071823
+    ],
+    "scale": [
+      10.385341389275649,
+      0.49662331611589455,
+      0.4707493569975865,
+      0.49354058417960867,
+      17.723874016229015,
+      0.49354058417960867,
+      0.1790259861438635,
+      0.25819494907288226,
+      9.207526685455777,
+      0.4707493569975866
+    ],
+    "coef": [
+      1.1734975427902274,
+      0.11937034117382907,
+      0.8106614400288434,
+      0.3934661644922344,
+      0.47256264782138147,
+      -0.40454729383258115,
+      0.3940574462680118,
+      -0.27155046457593845,
+      -0.28573765841879006,
+      1.0051831717546322
+    ],
+    "intercept": 1.761061510171994,
+    "calibration_coef": 0.49665758312741115,
+    "calibration_intercept": 0.627111528684937,
+    "metrics": {
+      "auc": 0.9367,
+      "brier": 0.1236,
+      "accuracy": 0.8033,
+      "sensitivity_at_0_5": 1.0,
+      "specificity_at_0_5": 0.3333,
+      "prevalence": 0.7049,
+      "n_test": 61,
+      "tn": 6,
+      "fp": 12,
+      "fn": 0,
+      "tp": 43,
+      "n_train": 181,
+      "n_calibration": 61,
+      "n_eligible": 303
+    },
+    "age_min": 30,
+    "age_max": 86,
+    "limitations": [
+      "Single-centre historical referral cohort; only 303 records.",
+      "No angiography decision labels, no deferred cohort, no clinical rule-out threshold.",
+      "Only confirmed inputs; no imputation; binary BBB and RWMA.",
+      "No external or prospective validation."
+    ]
+  }
+]

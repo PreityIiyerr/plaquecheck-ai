@@ -1,0 +1,15 @@
+name: Public-preview checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  safety-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python static bundle tests
+        run: python3 tests/check_bundle.py
+      - name: Check for accidental sensitive files
+        run: |
+          ! find . -type f \( -iname '*.xlsx' -o -iname '*.pdf' -o -iname '*.xpt' -o -iname '*.sas7bdat' -o -iname '*.env' \) | grep .
